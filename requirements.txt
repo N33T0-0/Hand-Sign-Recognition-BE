@@ -4,3 +4,4 @@ av
 mediapipe == 0.10.9
 keras == 3.7.0
 tensorflow == 2.18.0
+hypercorn==0.14.4
