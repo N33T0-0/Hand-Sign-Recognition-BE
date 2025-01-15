@@ -3,10 +3,7 @@
     "build": {
       "builder": "NIXPACKS"
     },
-    "start":{
-        "startCommand": "pip install packages.txt"
-    },
     "deploy": {
-      "startCommand": "uvicorn main:app --bind \"[::]:8100\""
+      "startCommand": "hypercorn main:app --bind \"[::]:8100\""
     }
   }
