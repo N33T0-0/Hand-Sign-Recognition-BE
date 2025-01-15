@@ -4,7 +4,7 @@ import base64
 # import cv2
 import numpy as np
 import keras
-import mediapipe as mp
+# import mediapipe as mp
 
 from fastapi import FastAPI, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
@@ -44,16 +44,16 @@ app.add_middleware(
 #     encoded_data = item.split(',')[1]
 #     return ({'status': 'frame received'})
 
-def base64_to_image(base64_str):
-    """Convert Base64 string to OpenCV image."""
-    img_data = base64.b64decode(base64_str)
-    np_array = np.frombuffer(img_data, np.uint8)
-    return cv2.imdecode(np_array, cv2.IMREAD_COLOR)
+# def base64_to_image(base64_str):
+#     """Convert Base64 string to OpenCV image."""
+#     img_data = base64.b64decode(base64_str)
+#     np_array = np.frombuffer(img_data, np.uint8)
+#     return cv2.imdecode(np_array, cv2.IMREAD_COLOR)
 
-def image_to_base64(image):
-    """Convert OpenCV image to Base64 string."""
-    _, buffer = cv2.imencode('.png', image)
-    return base64.b64encode(buffer).decode('utf-8')
+# def image_to_base64(image):
+#     """Convert OpenCV image to Base64 string."""
+#     _, buffer = cv2.imencode('.png', image)
+#     return base64.b64encode(buffer).decode('utf-8')
 
 # Decode
 target = ['a','b','c','e','i','m','o','s','t','u']
@@ -68,12 +68,12 @@ def processNClassify(X):
     # print(np.argmax(pred))
     return target[np.argmax(pred)]
 
-# Initialize MediaPipe Hands module
-mp_hands = mp.solutions.hands
-hands = mp_hands.Hands()
+# # Initialize MediaPipe Hands module
+# mp_hands = mp.solutions.hands
+# hands = mp_hands.Hands()
 
-# Initialize MediaPipe Drawing module for drawing landmarks
-mp_drawing = mp.solutions.drawing_utils
+# # Initialize MediaPipe Drawing module for drawing landmarks
+# mp_drawing = mp.solutions.drawing_utils
 
 # def detect_handsign(frame):
 #     # Convert the frame to RGB format
