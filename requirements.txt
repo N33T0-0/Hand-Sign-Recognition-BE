@@ -1,7 +1,8 @@
 opencv-python-headless == 4.10.0.84
 opencv-contrib-python == 4.10.0.84
-av
+av==12.3.0
 mediapipe == 0.10.9
 keras == 3.7.0
 tensorflow == 2.18.0
 hypercorn==0.14.4
+fastapi==0.115.6
