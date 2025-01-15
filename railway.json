@@ -1,8 +1,10 @@
 {
     "$schema": "https://railway.app/railway.schema.json",
     "build": {
-      "builder": "NIXPACKS",
-      "buildCommand": "pip install packages.txt"
+      "builder": "NIXPACKS"
+    },
+    "start":{
+        "startCommand": "pip install packages.txt"
     },
     "deploy": {
       "startCommand": "uvicorn main:app --bind \"[::]:8100\""
